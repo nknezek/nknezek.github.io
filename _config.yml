@@ -17,7 +17,7 @@ title: nknezek
 email: nknezek@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   This is the personal blog of Nicholas (Nick) Knezek. Currently a PhD Candidate in the UC Berkeley Department of Earth and Planeteary Science. I'm interested the generation and evolution Earth's magnetic field and love data!
-baseurl: "/site" # the subpath of your site, e.g. /blog
+baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://nknezek.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: nknezek
 github_username:  nknezek
