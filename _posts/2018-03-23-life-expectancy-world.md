@@ -2,7 +2,7 @@
 layout: post
 title:  "People are living longer!"
 date:   2018-03-23 15:44:23 -0700
-categories: good news today
+categories: good-news
 ---
 # Good News Today - People are living longer all over the world!
 
