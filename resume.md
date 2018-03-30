@@ -14,7 +14,7 @@ categories:
 
 **Research / Teaching Assistant** (2013 - 2018)   
 Department of Earth and Planetary Science, University of California -- Berkeley, CA
-* Research: Implemented a novel parallel numerical magnetohydronamic model for Earth’s core in Python and C, developed new statistical tests and analysis techniques to study observations of Earth’s magnetic field.
+* Research: Implemented a novel parallel numerical magnetohydrodynamic model for Earth’s core in Python and C, developed new statistical tests and analysis techniques to study observations of Earth’s magnetic field.
 * Courses taught: Physics of Earth and Planetary Interiors, The History and Evolution of Planet Earth, Astronomy – The Planets, Deep Time (Cosmology / Earth History)
 
 **Technologist** (2011 - 2013)    
@@ -53,11 +53,11 @@ Dartmouth College -- Hanover, NH
   - Conversational: **C**, **FORTRAN 77/95**, **Java**, **R**, **UPC**, **Perl**, **HTML**, **CSS**
 * Software: **LaTeX**, **Solidworks**, **GitHub**, **Excel**, **Word**, **Powerpoint**
 * Hardware: metal and wood shop experience, soldering, designing and modifying analog electronics, construction, auto-repair. 
-* Other skills: singing [[1](https://perfectfifth.berkeley.edu),[2](https://www.dartmouth.edu/~xado/)], rock-climbing, mentorship
+* Other skills: singing [[1](https://perfectfifth.berkeley.edu),[2](https://www.dartmouth.edu/~xado/)], rock-climbing, mentor-ship
 
 ### Professional Projects
 * [Numerical simulation of magnetohydrodynamic waves]()
-  - Python and C code to simulate waves in a stratified layer in Earth's core, implemented from scratch using a hybrid finite-volue and Fourier method. 
+  - Python and C code to simulate waves in a stratified layer in Earth's core, implemented from scratch using a hybrid finite-volume and Fourier method. 
 
 * [Mars thermal evolution](https://github.com/nknezek/MaTH_CAMPS)
   - MATLAB code to track the time-dependent thermal evolution of the Martian core. 
