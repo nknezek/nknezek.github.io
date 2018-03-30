@@ -1,0 +1,20 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+.publications {
+	margin-bottom: 15px;
+	p{
+	text-indent: -2em;
+	padding-left: 2em;
+	margin-top: 0px;
+  	margin-bottom: 0px;
+		a{
+		&:link { color: #000000; }
+		&:visited { color: #000000; }
+		&:hover { color: #000000; }
+		&:active { color: #000000; }
+		}
+	}
+}
