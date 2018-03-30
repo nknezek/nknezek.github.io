@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Cell Phones Give Opportunity in Africa"
+title:  "Cell phones give opportunity in Africa"
 date:   2018-03-30 15:44:23 -0700
 categories: good-news
 ---
