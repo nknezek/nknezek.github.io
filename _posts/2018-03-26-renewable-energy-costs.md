@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Renewable energy prices are plummeting and now out-compete all conventional sources"
+title:  "Renewable energy is dirt cheap"
 date:   2018-03-26 15:44:23 -0700
 categories: good-news
 ---

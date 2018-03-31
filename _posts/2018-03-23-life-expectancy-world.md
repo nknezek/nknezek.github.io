@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "People are living longer!"
+title:  "People are living longer"
 date:   2018-03-23 15:44:23 -0700
 categories: good-news
 ---
