@@ -72,13 +72,13 @@ Dartmouth College -- Hanover, NH
   - Python package to compute generation of magnetic signals due to fluid motions in Earth's core.
 
 ### Personal Projects
-* [Location History Heatmap](https://github.com/nknezek/location_history_heatmap)
+* [Location history heatmap](https://github.com/nknezek/location_history_heatmap)
   - project to track my location every 5 minutes for a year, then visualize as a heat-map and track on Google maps.
-* [Recipe Unit Conversions](https://github.com/nknezek/recipe-units)
+* [Recipe unit conversions](https://github.com/nknezek/recipe-units)
   - Python package to convert informal cooking measurements such as *dash*, *pinch*, *smidgen*, or *drop* to standard units and convert between volume and mass measures. 
-* [City Climate Visualizations](https://github.com/nknezek/climatecharts)
-  - Data Visualization of the typical climate of various cities showing temperature and sunlight by hour and average rainfall by day using observed data from weather stations and the [MERRA-2](https://gmao.gsfc.nasa.gov/reanalysis/MERRA-2/) and [GHCN-D](https://www.ncdc.noaa.gov/data-access/land-based-station-data/land-based-datasets/global-historical-climatology-network-ghcn) datasets.
-* [Global Temperature Anomalies](https://github.com/nknezek/temperature_anomaly)
+* [City climate visualizations](https://github.com/nknezek/climatecharts)
+  - Data visualization of the typical climate of various cities showing temperature and sunlight by hour and average rainfall by day using observed data from weather stations and the [MERRA-2](https://gmao.gsfc.nasa.gov/reanalysis/MERRA-2/) and [GHCN-D](https://www.ncdc.noaa.gov/data-access/land-based-station-data/land-based-datasets/global-historical-climatology-network-ghcn) datasets.
+* [Global temperature anomalies](https://github.com/nknezek/temperature_anomaly)
   - Visualization of the global monthly temperature anomaly over time compared to the +2C target set by the Paris Climate Accords using the [HADCRUT4](https://www.metoffice.gov.uk/hadobs/hadcrut4/) dataset. 
 
 ## Publications

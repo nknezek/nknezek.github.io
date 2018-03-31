@@ -22,14 +22,28 @@ permalink: /projects/
 
 ## Personal Projects
 
-### [Location History Heatmap](https://github.com/nknezek/location_history_heatmap)
+### [Location history heatmap](https://github.com/nknezek/location_history_heatmap)
 project to track my location every 5 minutes for a year, then visualize as a heat-map and track on Google maps.
 
-### [Recipe Unit Conversions](https://github.com/nknezek/recipe-units)
+<img src="https://github.com/nknezek/location_history_heatmap/blob/master/pictures/nation.png
+" alt="LocationHistoryNation" style="width: 200px;"/>
+<img src="https://github.com/nknezek/location_history_heatmap/blob/master/pictures/tahoe.png
+" alt="LocationHistoryTahoe" style="width: 200px;"/>
+
+### [Recipe unit conversions](https://github.com/nknezek/recipe-units)
 Python package to convert informal cooking measurements such as *dash*, *pinch*, *smidgen*, or *drop* to standard units and convert between volume and mass measures. 
 
-### [City Climate Visualizations](https://github.com/nknezek/climatecharts)
+### [City climate visualizations](https://github.com/nknezek/climatecharts)
 Data Visualization of the typical climate of various cities showing temperature and sunlight by hour and average rainfall by day using observed data from weather stations and the [MERRA-2](https://gmao.gsfc.nasa.gov/reanalysis/MERRA-2/) and [GHCN-D](https://www.ncdc.noaa.gov/data-access/land-based-station-data/land-based-datasets/global-historical-climatology-network-ghcn) datasets.
 
-### [Global Temperature Anomalies](https://github.com/nknezek/temperature_anomaly)
-  - Visualization of the global monthly temperature anomaly over time compared to the +2C target set by the Paris Climate Accords using the [HADCRUT4](https://www.metoffice.gov.uk/hadobs/hadcrut4/) dataset. 
+<img src="https://github.com/nknezek/climatecharts/blob/master/charts/Berkeley.png" alt="BerkeleyCA" style="width: 200px;"/>
+<img src="https://github.com/nknezek/climatecharts/blob/master/charts/Sanger.png" alt="SangerTX" style="width: 200px;"/>
+<img src="https://github.com/nknezek/climatecharts/blob/master/charts/Hanover.png" alt="HanoverNH" style="width: 200px;"/>
+
+### [Global temperature anomalies](https://github.com/nknezek/temperature_anomaly)
+Visualization of the global monthly temperature anomaly over time compared to the +2C target set by the Paris Climate Accords using the [HADCRUT4](https://www.metoffice.gov.uk/hadobs/hadcrut4/) dataset. 
+
+[<img src="https://github.com/nknezek/temperature_anomaly/blob/master/last_frame.png" alt="temperature_anomaly" style="width: 200px;"/>](https://github.com/nknezek/temperature_anomaly/blob/master/Global_T_anomaly.mp4)
+
+### [Project Euler](https://github.com/nknezek/project_euler)
+Simple repository of my [Project Euler](https://projecteuler.net) solutions, mainly coded in Python. 
