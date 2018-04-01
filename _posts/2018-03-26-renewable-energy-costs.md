@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Renewable energy is dirt cheap"
-date:   2018-03-26 15:44:23 -0700
+date:   2018-03-26 00:00:00 -0800
 categories: good-news
 ---
 
