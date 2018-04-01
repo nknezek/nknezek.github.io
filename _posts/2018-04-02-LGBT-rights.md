@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "LGBT rights are improving"
+title:  "LGBT acceptance is increasing"
 date:    2018-04-02 00:00:00 -0800
 categories: good-news
 ---
