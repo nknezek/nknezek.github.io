@@ -22,6 +22,14 @@ layout: default
   {%- if site.disqus.shortname -%}
     {%- include disqus_comments.html -%}
   {%- endif -%}
+<div class="PageNavigation">
+{% if page.previous %} 
+    <a class="prev" href="{{ page.previous.url }}">&larr; Previous: {{page.previous.title}}</a>
+{% endif %}
+{% if page.next %} 
+    <a class="next" href="{{ page.next.url }}">Next: {{page.next.title}} &rarr;</a>
+{% endif %}
+</div>
 
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 </article>
