@@ -25,7 +25,7 @@ Department of Earth and Planetary Science, University of California -- Berkeley,
 
 **Technologist** (2011 - 2013)    
 NASA Jet Propulsion Laboratory -- Pasadena, CA    
-* Assembled and led a team of six specialists to provide mission assurance and environmental analysis for a $100 million [high-altitude balloon telescope](https://www-robotics.jpl.nasa.gov/tasks/showTask.cfm?FuseAction=ShowTask&TaskID=243&tdaID=100050).
+* Assembled and led a team of six specialists to provide mission assurance and environmental analysis for a [high-altitude balloon telescope](https://www-robotics.jpl.nasa.gov/tasks/showTask.cfm?FuseAction=ShowTask&TaskID=243&tdaID=100050).
 * Implemented monte-carlo particle physics simulation software on supercomputer clusters.
 * Performed dose-depth radiation analysis for future spacecraft missions using a radiation model (NOVICE) and analyzed orbital-debris risk using an orbital debris engineering model (ORDEM).
 
