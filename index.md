@@ -6,9 +6,9 @@ layout: home
 ---
 
 <!-- # Nicholas R. Knezek -->
-This is the personal website of Nicholas R. Knezek, PhD candidate in the Department of Earth and Planetary Science at UC Berkeley and aspiring data-scientist. You can read about my [projects]({{site.baseurl}}{% link projects.md %}) or check out my full [resume]({{site.baseurl}}{% link resume.md %}). I've also recently started a [blog]({{site.baseurl}}{% link goodnews.md %}) focusing on good news stories in the world:
+This is the personal website of Nicholas R. Knezek, Data-scienctist and Geophysics PhD. You can read about my [projects]({{site.baseurl}}{% link projects.md %}), or see my [resume]({{site.baseurl}}{% link resume.md %}).
 
-# [Recent Good News]({{site.baseurl}}{% link goodnews.md %})
+# [Latest Blog Posts]({{site.baseurl}}{% link blog.md %})
 <div class="home">
     <ul class="post-list">
       {%- for post in site.posts limit:3 -%}
@@ -26,4 +26,3 @@ This is the personal website of Nicholas R. Knezek, PhD candidate in the Departm
     </ul>
 </div>
 feel free to <a href="{{ "/feed.xml" | relative_url }}">subscribe via RSS</a> for updates.
-

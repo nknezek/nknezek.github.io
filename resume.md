@@ -1,27 +1,33 @@
 ---
 layout: page-notitle
 title:  "Resume"
-date:   2018-03-30 15:44:23 -0700
-categories: 
+date:   2019-04-19 15:44:23 -0700
+categories:
 ---
 
 ## Nicholas R. Knezek
 
 ---------
-[nknezek@gmail.com](mailto:nknezek@gmail.com) | (940) 230-5194 | 2407 Dowling Pl. Apt 3, Berkeley, CA 94705      
+[nknezek@gmail.com](mailto:nknezek@gmail.com) | (940) 230-5194 | Oakland, CA
 
 ## Experience
 
-**Research / Teaching Assistant** (2013 - 2018)   
+**Data Scientist** (2018-2019)    
+Arceo Analytics -- San Francisco, CA
+* Engineered a data pipeline, machine-learning model, and explainer to assess and report on organizations’ cybersecurity risks.
+* Proposed, led, and put into production a machine-learning project to classify cybersecurity incident reports into insurance coverages
+* Taught workshops and wrote documentation on Python, Jupyter notebooks, and data-science tools for coworkers and customers.
+
+**Graduate Research & Teaching Assistant** (2013 - 2018)    
 Department of Earth and Planetary Science, University of California -- Berkeley, CA
 * Research: Implemented a novel parallel numerical magnetohydrodynamic model for Earth’s core in Python and C, developed new statistical tests and analysis techniques to study observations of Earth’s magnetic field.
 * Courses taught: Physics of Earth and Planetary Interiors, The History and Evolution of Planet Earth, Astronomy – The Planets, Deep Time (Cosmology / Earth History)
 
 **Technologist** (2011 - 2013)    
 NASA Jet Propulsion Laboratory -- Pasadena, CA    
-* Assembled and led a team of six specialists to provide mission assurance and environmental analysis for a $100 million [high-altitude balloon telescope](https://www-robotics.jpl.nasa.gov/tasks/showTask.cfm?FuseAction=ShowTask&TaskID=243&tdaID=100050). 
-* Implemented monte-carlo particle physics simulation software on supercomputer clusters. 
-* Performed dose-depth radiation analysis for future spacecraft missions using a radiation model (NOVICE) and analyzed orbital-debris risk using an orbital debris engineering model (ORDEM). 
+* Assembled and led a team of six specialists to provide mission assurance and environmental analysis for a $100 million [high-altitude balloon telescope](https://www-robotics.jpl.nasa.gov/tasks/showTask.cfm?FuseAction=ShowTask&TaskID=243&tdaID=100050).
+* Implemented monte-carlo particle physics simulation software on supercomputer clusters.
+* Performed dose-depth radiation analysis for future spacecraft missions using a radiation model (NOVICE) and analyzed orbital-debris risk using an orbital debris engineering model (ORDEM).
 
 **Undergraduate Researcher** (2009 – 2012)    
 Dartmouth College -- Hanover, NH    
@@ -31,14 +37,14 @@ Dartmouth College -- Hanover, NH
 ## Education
 
 **PhD -- Geophysics**, Department of Earth and Planetary Science    
-[University of California -- Berkeley, CA](https://www.berkeley.edu) (2013 - 2018 *expected*)    
+[University of California -- Berkeley, CA](https://www.berkeley.edu) (2013 - 2019)    
 *Thesis*: Simulation and Observation of Magnetohydrodynamic Waves in Earth's Core    
-*Honors*: Graduate Student Instructor Award, Department Graduate Student Representative
+*Honors*: Outstanding Graduate Student Instructor, Department Graduate Student Representative
 
 **AB -- Physics**, *Minor*: Engineering Sciences     
 [Dartmouth College](http://home.dartmouth.edu) -- Hanover, NH (2008 - 2012)    
 *Thesis*: Energetic Oxygen Ions Near Europa    
-*Honors*: Cum Laude, High Honors in Physics, Tau Beta Pi engineering honor society, The Chair’s Prize in physics. 
+*Honors*: Cum Laude, High Honors in Physics, Tau Beta Pi engineering honor society, The Chair’s Prize in physics.
 
 **High School**    
 [Sanger, TX](https://www.sangerisd.net) (2004 - 2008)    
@@ -52,21 +58,21 @@ Dartmouth College -- Hanover, NH
   - Fluent: **MATLAB**, **Bash**
   - Conversational: **C**, **FORTRAN 77/95**, **Java**, **R**, **UPC**, **Perl**, **HTML**, **CSS**
 * Software: **LaTeX**, **Solidworks**, **GitHub**, **Excel**, **Word**, **Powerpoint**
-* Hardware: metal and wood shop experience, soldering, designing and modifying analog electronics, construction, auto-repair. 
-* Other skills: singing [[1](https://perfectfifth.berkeley.edu),[2](https://www.dartmouth.edu/~xado/)], rock-climbing, mentor-ship
+* Hardware: metal and wood shop experience, soldering, designing and modifying analog electronics, construction, auto-repair.
+* Other skills: singing [[1](https://perfectfifth.berkeley.edu),[2](https://www.dartmouth.edu/~xado/)], rock-climbing
 
 ### Professional Projects
 * [Numerical simulation of magnetohydrodynamic waves]()
-  - Python and C code to simulate waves in a stratified layer in Earth's core, implemented from scratch using a hybrid finite-volume and Fourier method. 
+  - Python and C code to simulate waves in a stratified layer in Earth's core, implemented from scratch using a hybrid finite-volume and Fourier method.
 
 * [Mars thermal evolution](https://github.com/nknezek/MaTH_CAMPS)
-  - MATLAB code to track the time-dependent thermal evolution of the Martian core. 
+  - MATLAB code to track the time-dependent thermal evolution of the Martian core.
 
 * [Earth thermo-chemical-magnetic evolution](https://github.com/nknezek/MgSi-Exsolution)
-  - Python package to track the thermo-chemical evolution and coupling between Earth's core and mantle. 
+  - Python package to track the thermo-chemical evolution and coupling between Earth's core and mantle.
 
 * [Magnetic field observations of Earth's core](https://github.com/nknezek/coremagmodels)
-  - Python package to work with various published magnetic field models of Earth's core, including CHAOS-6, GUFM1, COV-OBS, and various GUFM-SAT models. 
+  - Python package to work with various published magnetic field models of Earth's core, including CHAOS-6, GUFM1, COV-OBS, and various GUFM-SAT models.
 
 * [Coupling fluid motions and magnetic signals from Earth's core](https://github.com/nknezek/coreflows)
   - Python package to compute generation of magnetic signals due to fluid motions in Earth's core.
@@ -75,11 +81,11 @@ Dartmouth College -- Hanover, NH
 * [Location history heatmap](https://github.com/nknezek/location_history_heatmap)
   - project to track my location every 5 minutes for a year, then visualize as a heat-map and track on Google maps.
 * [Recipe unit conversions](https://github.com/nknezek/recipe-units)
-  - Python package to convert informal cooking measurements such as *dash*, *pinch*, *smidgen*, or *drop* to standard units and convert between volume and mass measures. 
+  - Python package to convert informal cooking measurements such as *dash*, *pinch*, *smidgen*, or *drop* to standard units and convert between volume and mass measures.
 * [City climate visualizations](https://github.com/nknezek/climatecharts)
   - Data visualization of the typical climate of various cities showing temperature and sunlight by hour and average rainfall by day using observed data from weather stations and the [MERRA-2](https://gmao.gsfc.nasa.gov/reanalysis/MERRA-2/) and [GHCN-D](https://www.ncdc.noaa.gov/data-access/land-based-station-data/land-based-datasets/global-historical-climatology-network-ghcn) datasets.
 * [Global temperature anomalies](https://github.com/nknezek/temperature_anomaly)
-  - Visualization of the global monthly temperature anomaly over time compared to the +2C target set by the Paris Climate Accords using the [HADCRUT4](https://www.metoffice.gov.uk/hadobs/hadcrut4/) dataset. 
+  - Visualization of the global monthly temperature anomaly over time compared to the +2C target set by the Paris Climate Accords using the [HADCRUT4](https://www.metoffice.gov.uk/hadobs/hadcrut4/) dataset.
 
 ## Publications
 <div class="publications">
