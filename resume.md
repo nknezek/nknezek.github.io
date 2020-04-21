@@ -10,6 +10,9 @@ categories:
 ---------
 [nknezek@gmail.com](mailto:nknezek@gmail.com) | (940) 230-5194 | Oakland, CA
 
+### Current Status
+I'm actively seeking employment as a data scientist. Reach out if you know of a role I'd be a good fit for!
+
 ## Experience
 
 **Data Scientist** (2018-2019)    
