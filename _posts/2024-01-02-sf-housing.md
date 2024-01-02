@@ -6,7 +6,7 @@ categories: housing
 ---
 
 Hi! I'm Nick and I'm looking for a studio or 1BR apt in SF.
-If you have a good lead, please send me an email at nknezek+sf2024@gmail.com .
+If you have a good lead, please send me an email at [nknezek+sf2024@gmail.com](mailto:nknezek+sf2024@gmail.com).
 
 * Looking for studio or 1BR in SF.
 * Location: Walkable, bikeable, sunny part of SF, ideally near BART.
@@ -19,4 +19,4 @@ If you have a good lead, please send me an email at nknezek+sf2024@gmail.com .
     * Storage enough for 3 bikes, boxes, tools
     * Have car - on-street parking for my car is fine but dedicated spot is ideal
 * Me: Nick Knezek. 34, he/him, stable job, PhD, clean, respectful, bike/climb, no pets. I’ve lived in Berkeley/Oakland with roommates or in community houses since 2013 and am looking to try out solo-living in SF. I work as a remote-first geo/data-scientist with a company office in downtown Berkeley. References available upon request.
-* contact: nknezek+sf2024@gmail.com
+* contact: [nknezek+sf2024@gmail.com](mailto:nknezek+sf2024@gmail.com)
