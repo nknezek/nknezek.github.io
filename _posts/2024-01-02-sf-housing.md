@@ -6,12 +6,13 @@ categories: housing
 ---
 
 Hi! I'm Nick and I'm looking for a studio or 1BR apt in SF.
+
 If you have a good lead, please send me an email at [nknezek+sf2024@gmail.com](mailto:nknezek+sf2024@gmail.com).
 
-* Looking for studio or 1BR in SF.
+* I'm looking for a studio or 1BR in SF.
+* Time: Feb, Mar, or Apr 2023 move-in. <=1 year lease.
 * Location: Walkable, bikeable, sunny part of SF, ideally near BART.
 * Neighborhoods: Duboce Triangle, Mission, Hayes, Lower Haight, Fillmore, Haight-Ashbury/Panhandle, Castro, Potrero, Dolores Heights.
-* Time: Feb, Mar, or Apr 2023 move-in. <=1 year lease
 * Budget: <$2500 / month rent+utilities
 * Wants:
     * Lots of natural light in-unit
