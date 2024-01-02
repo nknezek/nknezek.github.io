@@ -10,47 +10,51 @@ categories:
 ---------
 [nknezek@gmail.com](mailto:nknezek@gmail.com) | (940) 230-5194 | Oakland, CA
 
-### Current Status
-I'm actively seeking employment as a data scientist. Reach out if you know of a role I'd be a good fit for!
 
 ## Experience
 
-**Data Scientist** (2018-2019)    
+**Staff Data Scientist** (2020-present)
+KoBold Metals -- Berkeley, CA
+* Lead data-scientist for global nickel generative team.
+* Managed and coordinated a team of data scientists, geologists, and others to rapidly identify and evaluate properties for staking and acquisition with direct business impact on eight-figure deals.
+* Developed and implemented methods for 2D and 3D spatial interpolation and sampling from Bayesian posterior ensembles.
+
+**Data Scientist** (2018-2019)
 Arceo Analytics -- San Francisco, CA
 * Engineered a data pipeline, machine-learning model, and explainer to assess and report on organizations’ cybersecurity risks.
 * Proposed, led, and put into production a machine-learning project to classify cybersecurity incident reports into insurance coverages
 * Taught workshops and wrote documentation on Python, Jupyter notebooks, and data-science tools for coworkers and customers.
 
-**Graduate Research & Teaching Assistant** (2013 - 2018)    
+**Graduate Research & Teaching Assistant** (2013 - 2018)
 Department of Earth and Planetary Science, University of California -- Berkeley, CA
 * Research: Implemented a novel parallel numerical magnetohydrodynamic model for Earth’s core in Python and C, developed new statistical tests and analysis techniques to study observations of Earth’s magnetic field.
 * Courses taught: Physics of Earth and Planetary Interiors, The History and Evolution of Planet Earth, Astronomy – The Planets, Deep Time (Cosmology / Earth History)
 
-**Technologist** (2011 - 2013)    
-NASA Jet Propulsion Laboratory -- Pasadena, CA    
+**Technologist** (2011 - 2013)
+NASA Jet Propulsion Laboratory -- Pasadena, CA
 * Assembled and led a team of six specialists to provide mission assurance and environmental analysis for a [high-altitude balloon telescope](https://www-robotics.jpl.nasa.gov/tasks/showTask.cfm?FuseAction=ShowTask&TaskID=243&tdaID=100050).
 * Implemented monte-carlo particle physics simulation software on supercomputer clusters.
 * Performed dose-depth radiation analysis for future spacecraft missions using a radiation model (NOVICE) and analyzed orbital-debris risk using an orbital debris engineering model (ORDEM).
 
-**Undergraduate Researcher** (2009 – 2012)    
-Dartmouth College -- Hanover, NH    
+**Undergraduate Researcher** (2009 – 2012)
+Dartmouth College -- Hanover, NH
 * Designed, manufactured and assembled balloon payloads utilizing CAD, electronics, and metal work for the [Balloon Array for RBSP Relativistic Electron Loss (BARREL) project](https://link.springer.com/article/10.1007/s11214-013-9971-z) studying Earth’s radiation belts.
 * Analyzed and aggregated data from past balloon flights using MATLAB and IDL.
 
 ## Education
 
-**PhD -- Geophysics**, Department of Earth and Planetary Science    
-[University of California -- Berkeley, CA](https://www.berkeley.edu) (2013 - 2019)    
-*Thesis*: Simulation and Observation of Magnetohydrodynamic Waves in Earth's Core    
+**PhD -- Geophysics**, Department of Earth and Planetary Science
+[University of California -- Berkeley, CA](https://www.berkeley.edu) (2013 - 2019)
+*Thesis*: Simulation and Observation of Magnetohydrodynamic Waves in Earth's Core
 *Honors*: Outstanding Graduate Student Instructor, Department Graduate Student Representative
 
-**AB -- Physics**, *Minor*: Engineering Sciences     
-[Dartmouth College](http://home.dartmouth.edu) -- Hanover, NH (2008 - 2012)    
-*Thesis*: Energetic Oxygen Ions Near Europa    
+**AB -- Physics**, *Minor*: Engineering Sciences
+[Dartmouth College](http://home.dartmouth.edu) -- Hanover, NH (2008 - 2012)
+*Thesis*: Energetic Oxygen Ions Near Europa
 *Honors*: Cum Laude, High Honors in Physics, Tau Beta Pi engineering honor society, The Chair’s Prize in physics.
 
-**High School**    
-[Sanger, TX](https://www.sangerisd.net) (2004 - 2008)    
+**High School**
+[Sanger, TX](https://www.sangerisd.net) (2004 - 2008)
 *Honors*: Valedictorian, National Merit Scholar
 
 
