@@ -5,7 +5,7 @@
 layout: home
 ---
 
-This is the personal website of Nicholas R. Knezek, Data Scientist and Geophysics PhD. You can read about my [projects]({{site.baseurl}}{% link projects.md %}), or see my [resume]({{site.baseurl}}{% link resume.md %}).
+Hi! I'm Nick Knezek. Data Scientist and Geophysics PhD based in the SF Bay Area.
 
 # [Latest Blog Posts]({{site.baseurl}}{% link blog.md %})
 <div class="home">
