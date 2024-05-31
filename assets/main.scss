@@ -1,38 +1,54 @@
----
----
-
-@import "{{ site.theme }}";
+--- --- @import "{{ site.theme }}";
 
 .publications {
 	margin-bottom: 15px;
-	p{
-	text-indent: -2em;
-	padding-left: 2em;
-	margin-top: 0px;
-  	margin-bottom: 0px;
-		a{
-		&:link { color: #000000; }
-		&:visited { color: #000000; }
-		&:hover { color: #000000; }
-		&:active { color: #000000; }
+
+	p {
+		text-indent: -2em;
+		padding-left: 2em;
+		margin-top: 0px;
+		margin-bottom: 0px;
+
+		a {
+			&:link {
+				color: #000000;
+			}
+
+			&:visited {
+				color: #000000;
+			}
+
+			&:hover {
+				color: #000000;
+			}
+
+			&:active {
+				color: #000000;
+			}
 		}
 	}
 }
 
+.caption {
+	text-align: center;
+	font-size: .8rem;
+	color: grey;
+}
+
 .PageNavigation {
-  font-size: 14px;
-  display: block;
-  width: auto;
-  overflow: hidden;
+	font-size: 14px;
+	display: block;
+	width: auto;
+	overflow: hidden;
 }
 
 .PageNavigation a {
-  display: block;
-  width: 50%;
-  float: left;
-  margin: 1em 0;
+	display: block;
+	width: 50%;
+	float: left;
+	margin: 1em 0;
 }
 
 .PageNavigation .next {
-  text-align: right;
+	text-align: right;
 }
