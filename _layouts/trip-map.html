@@ -1,0 +1,631 @@
+---
+layout: default
+---
+<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4/dist/maplibre-gl.css" />
+
+<style>
+  /* ── Full-bleed map wrapper ─────────────────────────────────────────────── */
+  .trip-map-wrapper {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    margin-left: -50vw;
+    margin-bottom: 2rem;
+    background: #111;
+  }
+
+  #trip-map {
+    width: 100%;
+    height: 72vh;
+    min-height: 420px;
+  }
+
+  /* ── Legend bar ─────────────────────────────────────────────────────────── */
+  .map-legend {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem 1.1rem;
+    padding: 0.55rem 1rem;
+    background: rgba(15, 15, 15, 0.88);
+    color: #e8e8e8;
+    font-size: 0.78rem;
+    font-family: sans-serif;
+    letter-spacing: 0.01em;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+  }
+
+  .legend-swatch {
+    width: 28px;
+    height: 4px;
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+
+  .legend-dot {
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    flex-shrink: 0;
+  }
+
+  .legend-sep {
+    opacity: 0.3;
+    margin: 0 0.2rem;
+  }
+
+  .map-hint {
+    text-align: center;
+    font-size: 0.72rem;
+    color: #666;
+    padding: 0.2rem;
+    background: #0a0a0a;
+    font-family: sans-serif;
+  }
+
+  /* ── Photo markers ──────────────────────────────────────────────────────── */
+  .photo-marker {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 2.5px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    position: relative;
+    z-index: 1;
+  }
+
+  .photo-marker:hover {
+    transform: scale(1.3);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6);
+    z-index: 10;
+  }
+
+  .photo-marker svg {
+    width: 17px;
+    height: 17px;
+    fill: #fff;
+    display: block;
+  }
+
+  /* ── Lightbox ───────────────────────────────────────────────────────────── */
+  #lb-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.93);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #lb-inner {
+    max-width: min(860px, 94vw);
+    width: 100%;
+    padding: 0 3.5rem;
+    box-sizing: border-box;
+  }
+
+  #lb-img {
+    display: block;
+    width: 100%;
+    max-height: 68vh;
+    object-fit: contain;
+    border-radius: 4px;
+    background: #1a1a1a;
+  }
+
+  #lb-info {
+    color: #e8e8e8;
+    padding: 0.7rem 0.1rem 0;
+    font-family: sans-serif;
+  }
+
+  #lb-title {
+    margin: 0 0 0.3rem;
+    font-size: 1.05rem;
+    font-weight: 600;
+  }
+
+  #lb-caption {
+    margin: 0;
+    font-size: 0.88rem;
+    color: #aaa;
+    line-height: 1.5;
+  }
+
+  #lb-day {
+    display: inline-block;
+    font-size: 0.72rem;
+    padding: 3px 10px;
+    border-radius: 20px;
+    color: #fff;
+    margin-top: 0.55rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .lb-btn {
+    position: fixed;
+    background: rgba(255, 255, 255, 0.12);
+    border: none;
+    color: #fff;
+    font-size: 1.8rem;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s;
+    line-height: 1;
+  }
+
+  .lb-btn:hover { background: rgba(255, 255, 255, 0.28); }
+
+  #lb-close { top: 1rem;  right: 1rem; font-size: 1.4rem; }
+  #lb-prev  { left: 0.6rem; top: 50%; transform: translateY(-50%); }
+  #lb-next  { right: 0.6rem; top: 50%; transform: translateY(-50%); }
+
+  #lb-counter {
+    position: fixed;
+    bottom: 1.1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255,255,255,0.45);
+    font-family: sans-serif;
+    font-size: 0.8rem;
+  }
+</style>
+
+<!-- Inject map config from Jekyll front matter -->
+<script>
+window.TRIP_CFG = {
+  bounds:      {% if page.map_bounds %}{{ page.map_bounds | jsonify }}{% else %}null{% endif %},
+  center:      {{ page.map_center | jsonify }},
+  zoom:        {{ page.map_zoom | default: 11 }},
+  pitch:       {{ page.map_pitch | default: 55 }},
+  bearing:     {{ page.map_bearing | default: -20 }},
+  exaggeration: {{ page.map_terrain_exaggeration | default: 1.5 }},
+  trackUrl:    "{{ page.map_track | relative_url }}",
+  photosUrl:   "{{ page.map_photos | relative_url }}",
+  dayNames:    {% if page.map_day_names %}{{ page.map_day_names | jsonify }}{% else %}[]{% endif %}
+};
+</script>
+
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+        {{ page.date | date: date_format }}
+      </time>
+      {%- if page.author -%}
+        &nbsp;·&nbsp;<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <span class="p-author h-card" itemprop="name">{{ page.author }}</span>
+        </span>
+      {%- endif -%}
+    </p>
+  </header>
+
+  <!-- ── Map ─────────────────────────────────────────────────────────────── -->
+  <div class="trip-map-wrapper">
+    <div id="trip-map"></div>
+    <div id="map-legend" class="map-legend"></div>
+    <p class="map-hint">Drag to pan · Scroll to zoom · Right-drag / Ctrl+drag to tilt &amp; rotate · Click a camera pin to view photo</p>
+  </div>
+
+  <!-- ── Lightbox ────────────────────────────────────────────────────────── -->
+  <div id="lb-overlay" style="display:none" role="dialog" aria-modal="true" aria-label="Photo viewer">
+    <button id="lb-close" class="lb-btn" aria-label="Close">&#x2715;</button>
+    <button id="lb-prev"  class="lb-btn" aria-label="Previous photo">&#8249;</button>
+    <button id="lb-next"  class="lb-btn" aria-label="Next photo">&#8250;</button>
+    <div id="lb-inner">
+      <img id="lb-img" src="" alt="" />
+      <div id="lb-info">
+        <p id="lb-title"></p>
+        <p id="lb-caption"></p>
+        <span id="lb-day"></span>
+      </div>
+    </div>
+    <div id="lb-counter"></div>
+  </div>
+
+  <!-- ── Post body ───────────────────────────────────────────────────────── -->
+  <div class="post-content e-content" itemprop="articleBody">
+    {{ content }}
+  </div>
+
+  <div class="PageNavigation">
+    {% if page.previous %}
+      <a class="prev" href="{{ page.previous.url }}">&larr; Previous: {{page.previous.title}}</a>
+    {% endif %}
+    {% if page.next %}
+      <a class="next" href="{{ page.next.url }}">Next: {{page.next.title}} &rarr;</a>
+    {% endif %}
+  </div>
+
+  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+</article>
+
+<script src="https://unpkg.com/maplibre-gl@4/dist/maplibre-gl.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  // ── Day colour palette ──────────────────────────────────────────────────
+  var PALETTE = [
+    '#3B82F6', // Day 1 — blue
+    '#22C55E', // Day 2 — green
+    '#F59E0B', // Day 3 — amber
+    '#F97316', // Day 4 — orange
+    '#EF4444', // Day 5 — red
+    '#8B5CF6', // Day 6 — purple
+    '#EC4899', // Day 7 — pink
+  ];
+
+  var CFG = window.TRIP_CFG;
+
+  function dayColor(day) {
+    return PALETTE[(day - 1) % PALETTE.length];
+  }
+
+  function dayLabel(day) {
+    return (CFG.dayNames && CFG.dayNames[day - 1]) || ('Day ' + day);
+  }
+
+  // ── Camera icon SVG ─────────────────────────────────────────────────────
+  var CAMERA_ICON = '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">'
+    + '<path d="M9 3L7.17 5H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7'
+    + 'a2 2 0 0 0-2-2h-3.17L15 3H9zm3 15a5 5 0 1 1 0-10 5 5 0 0 1 0 10z'
+    + 'm0-2a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>';
+
+  // ── Map style ───────────────────────────────────────────────────────────
+  var mapStyle = {
+    version: 8,
+    sources: {
+      satellite: {
+        type: 'raster',
+        tiles: [
+          'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'
+        ],
+        tileSize: 256,
+        maxzoom: 19,
+        attribution: '&copy; <a href="https://www.esri.com/" target="_blank">Esri</a>, Maxar, Earthstar Geographics'
+      },
+      'esri-labels': {
+        type: 'raster',
+        tiles: [
+          'https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}'
+        ],
+        tileSize: 256,
+        maxzoom: 19
+      }
+    },
+    layers: [
+      { id: 'satellite',   type: 'raster', source: 'satellite' },
+      {
+        id: 'esri-labels', type: 'raster', source: 'esri-labels',
+        paint: { 'raster-opacity': 0.8 }
+      }
+    ]
+  };
+
+  // ── Initialise map ──────────────────────────────────────────────────────
+  var map = new maplibregl.Map({
+    container: 'trip-map',
+    style: mapStyle,
+    center:   CFG.center,
+    zoom:     CFG.zoom,
+    pitch:    CFG.pitch,
+    bearing:  CFG.bearing,
+    maxPitch: 85
+  });
+
+  map.addControl(new maplibregl.NavigationControl(), 'top-right');
+  map.addControl(new maplibregl.FullscreenControl({ container: document.getElementById('trip-map') }), 'top-right');
+  map.addControl(new maplibregl.ScaleControl({ unit: 'metric' }), 'bottom-left');
+
+  // ── On load: terrain + data ─────────────────────────────────────────────
+  var allPhotos = [];
+
+  map.on('load', function () {
+    // 3-D terrain
+    map.addSource('terrain-dem', {
+      type: 'raster-dem',
+      tiles: ['https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png'],
+      encoding: 'terrarium',
+      tileSize: 256,
+      maxzoom: 15
+    });
+    map.setTerrain({ source: 'terrain-dem', exaggeration: CFG.exaggeration });
+
+    // Atmospheric sky
+    map.addLayer({
+      id: 'sky',
+      type: 'sky',
+      paint: {
+        'sky-type': 'atmosphere',
+        'sky-atmosphere-sun': [0.0, 90.0],
+        'sky-atmosphere-sun-intensity': 15
+      }
+    });
+
+    // Fit to bounds if provided
+    if (CFG.bounds) {
+      map.fitBounds(CFG.bounds, { padding: 30, duration: 1200 });
+    }
+
+    // Load track and photos in parallel
+    Promise.all([
+      loadTrack(CFG.trackUrl),
+      fetch(CFG.photosUrl).then(function (r) { return r.json(); })
+    ]).then(function (results) {
+      var trackGeoJSON = results[0];
+      var photos       = results[1];
+      allPhotos = photos;
+      addTrack(trackGeoJSON);
+      addPhotoMarkers(photos);
+      buildLegend(trackGeoJSON, photos);
+    }).catch(function (err) {
+      console.error('Trip map: failed to load data', err);
+    });
+  });
+
+  // ── GPX / GeoJSON loader ────────────────────────────────────────────────
+  function loadTrack(url) {
+    return fetch(url).then(function (r) {
+      if (url.toLowerCase().endsWith('.gpx')) {
+        return r.text().then(function (txt) {
+          var doc = new DOMParser().parseFromString(txt, 'application/xml');
+          return parseGPX(doc);
+        });
+      }
+      return r.json();
+    });
+  }
+
+  // Minimal self-contained GPX → GeoJSON converter
+  function parseGPX(doc) {
+    var features = [];
+
+    doc.querySelectorAll('trk').forEach(function (trk, i) {
+      var name   = (trk.querySelector('name') || {}).textContent || ('Track ' + (i + 1));
+      var coords = [];
+      trk.querySelectorAll('trkpt').forEach(function (pt) {
+        var lon = parseFloat(pt.getAttribute('lon'));
+        var lat = parseFloat(pt.getAttribute('lat'));
+        var ele = parseFloat((pt.querySelector('ele') || {}).textContent || '0');
+        if (!isNaN(lon) && !isNaN(lat)) coords.push([lon, lat, ele]);
+      });
+      if (coords.length) {
+        features.push({
+          type: 'Feature',
+          properties: { name: name, day: i + 1 },
+          geometry: { type: 'LineString', coordinates: coords }
+        });
+      }
+    });
+
+    // Also support <rte> elements
+    doc.querySelectorAll('rte').forEach(function (rte, i) {
+      var name   = (rte.querySelector('name') || {}).textContent || ('Route ' + (i + 1));
+      var coords = [];
+      rte.querySelectorAll('rtept').forEach(function (pt) {
+        var lon = parseFloat(pt.getAttribute('lon'));
+        var lat = parseFloat(pt.getAttribute('lat'));
+        var ele = parseFloat((pt.querySelector('ele') || {}).textContent || '0');
+        if (!isNaN(lon) && !isNaN(lat)) coords.push([lon, lat, ele]);
+      });
+      if (coords.length) {
+        features.push({
+          type: 'Feature',
+          properties: { name: name, day: features.length + 1 },
+          geometry: { type: 'LineString', coordinates: coords }
+        });
+      }
+    });
+
+    return { type: 'FeatureCollection', features: features };
+  }
+
+  // ── Track rendering ─────────────────────────────────────────────────────
+  function buildDayColorExpression() {
+    // Build a MapLibre 'match' expression for up to 7 days
+    var expr = ['match', ['get', 'day']];
+    for (var d = 1; d <= 7; d++) {
+      expr.push(d, dayColor(d));
+    }
+    expr.push(PALETTE[0]); // fallback
+    return expr;
+  }
+
+  function addTrack(geojson) {
+    map.addSource('track', { type: 'geojson', data: geojson });
+
+    // Dark casing for contrast on bright satellite imagery
+    map.addLayer({
+      id: 'track-casing',
+      type: 'line',
+      source: 'track',
+      layout: { 'line-join': 'round', 'line-cap': 'round' },
+      paint: {
+        'line-color': '#000',
+        'line-width': 7,
+        'line-opacity': 0.35
+      }
+    });
+
+    // Coloured line, one colour per day
+    map.addLayer({
+      id: 'track-line',
+      type: 'line',
+      source: 'track',
+      layout: { 'line-join': 'round', 'line-cap': 'round' },
+      paint: {
+        'line-color': buildDayColorExpression(),
+        'line-width': 3.5,
+        'line-opacity': 0.95
+      }
+    });
+
+    // Click on track → popup with day name
+    map.on('mouseenter', 'track-line', function () {
+      map.getCanvas().style.cursor = 'pointer';
+    });
+    map.on('mouseleave', 'track-line', function () {
+      map.getCanvas().style.cursor = '';
+    });
+    map.on('click', 'track-line', function (e) {
+      var day  = e.features[0].properties.day;
+      var name = e.features[0].properties.name || dayLabel(day);
+      new maplibregl.Popup({ closeButton: false, className: 'track-popup' })
+        .setLngLat(e.lngLat)
+        .setHTML('<strong style="color:' + dayColor(day) + '">' + name + '</strong>')
+        .addTo(map);
+    });
+  }
+
+  // ── Photo markers ───────────────────────────────────────────────────────
+  function addPhotoMarkers(photos) {
+    photos.forEach(function (photo, idx) {
+      var lng = photo.display_lng !== undefined ? photo.display_lng : photo.exif_lng;
+      var lat = photo.display_lat !== undefined ? photo.display_lat : photo.exif_lat;
+
+      var el = document.createElement('div');
+      el.className   = 'photo-marker';
+      el.style.background = dayColor(photo.day);
+      el.innerHTML   = CAMERA_ICON;
+      el.title       = photo.title || '';
+
+      el.addEventListener('click', function (e) {
+        e.stopPropagation();
+        openLightbox(idx);
+      });
+
+      new maplibregl.Marker({ element: el, anchor: 'center' })
+        .setLngLat([lng, lat])
+        .addTo(map);
+    });
+  }
+
+  // ── Lightbox ────────────────────────────────────────────────────────────
+  var lbOverlay  = document.getElementById('lb-overlay');
+  var lbImg      = document.getElementById('lb-img');
+  var lbTitle    = document.getElementById('lb-title');
+  var lbCaption  = document.getElementById('lb-caption');
+  var lbDay      = document.getElementById('lb-day');
+  var lbCounter  = document.getElementById('lb-counter');
+  var currentIdx = 0;
+
+  function openLightbox(idx) {
+    currentIdx = idx;
+    renderLightbox();
+    lbOverlay.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    lbImg.focus();
+  }
+
+  function closeLightbox() {
+    lbOverlay.style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  function renderLightbox() {
+    var p = allPhotos[currentIdx];
+    lbImg.src              = p.file;
+    lbImg.alt              = p.title || '';
+    lbTitle.textContent    = p.title || '';
+    lbCaption.textContent  = p.caption || '';
+    lbDay.textContent      = dayLabel(p.day);
+    lbDay.style.background = dayColor(p.day);
+    lbCounter.textContent  = (currentIdx + 1) + ' / ' + allPhotos.length;
+  }
+
+  function prevPhoto() {
+    currentIdx = (currentIdx - 1 + allPhotos.length) % allPhotos.length;
+    renderLightbox();
+  }
+
+  function nextPhoto() {
+    currentIdx = (currentIdx + 1) % allPhotos.length;
+    renderLightbox();
+  }
+
+  document.getElementById('lb-close').addEventListener('click', closeLightbox);
+  document.getElementById('lb-prev').addEventListener('click', prevPhoto);
+  document.getElementById('lb-next').addEventListener('click', nextPhoto);
+
+  // Close on backdrop click
+  lbOverlay.addEventListener('click', function (e) {
+    if (e.target === lbOverlay) closeLightbox();
+  });
+
+  // Keyboard navigation
+  document.addEventListener('keydown', function (e) {
+    if (lbOverlay.style.display === 'none') return;
+    if (e.key === 'Escape')      closeLightbox();
+    if (e.key === 'ArrowLeft')   prevPhoto();
+    if (e.key === 'ArrowRight')  nextPhoto();
+  });
+
+  // Touch swipe for mobile
+  var touchStartX = 0;
+  lbOverlay.addEventListener('touchstart', function (e) {
+    touchStartX = e.changedTouches[0].clientX;
+  }, { passive: true });
+  lbOverlay.addEventListener('touchend', function (e) {
+    var dx = e.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(dx) > 50) { dx < 0 ? nextPhoto() : prevPhoto(); }
+  });
+
+  // ── Legend ──────────────────────────────────────────────────────────────
+  function buildLegend(geojson, photos) {
+    var legend = document.getElementById('map-legend');
+    var days   = [];
+    geojson.features.forEach(function (f) {
+      var d = f.properties && f.properties.day;
+      if (d && days.indexOf(d) === -1) days.push(d);
+    });
+    days.sort(function (a, b) { return a - b; });
+
+    days.forEach(function (day) {
+      var item = document.createElement('div');
+      item.className = 'legend-item';
+      item.innerHTML =
+        '<div class="legend-swatch" style="background:' + dayColor(day) + '"></div>'
+        + '<span>' + dayLabel(day) + '</span>';
+      legend.appendChild(item);
+    });
+
+    if (photos.length) {
+      var sep = document.createElement('span');
+      sep.className   = 'legend-sep';
+      sep.textContent = '|';
+      legend.appendChild(sep);
+
+      var photoEl = document.createElement('div');
+      photoEl.className = 'legend-item';
+      photoEl.innerHTML =
+        '<div class="legend-dot" style="background:#555"></div>'
+        + '<span>Photo (click to view)</span>';
+      legend.appendChild(photoEl);
+    }
+  }
+
+})();
+</script>
