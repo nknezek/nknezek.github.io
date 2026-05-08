@@ -1,0 +1,121 @@
+[
+  {
+    "_comment": "STUB DATA — replace exif_lat/exif_lng with actual EXIF GPS coords from your photos.",
+    "id": "photo-01",
+    "day": 1,
+    "exif_lat": 51.6683,
+    "exif_lng": -116.4751,
+    "title": "Bow Lake at the trailhead",
+    "caption": "Looking out over Bow Lake before the climb onto the Wapta Icefield. The turquoise water against the surrounding peaks is hard to beat.",
+    "file": "/assets/wapta/photos/photo-01.jpg"
+  },
+  {
+    "id": "photo-02",
+    "day": 1,
+    "exif_lat": 51.6899,
+    "exif_lng": -116.4862,
+    "display_lat": 51.6910,
+    "display_lng": -116.4840,
+    "title": "Arriving at Bow Hut",
+    "caption": "First views of the Wapta Icefield as we arrived at Bow Hut. The red ACC hut was a welcome sight after the long climb from the lake.",
+    "file": "/assets/wapta/photos/photo-02.jpg"
+  },
+  {
+    "id": "photo-03",
+    "day": 2,
+    "exif_lat": 51.6995,
+    "exif_lng": -116.5012,
+    "title": "Morning light on the glacier",
+    "caption": "Early morning alpenglow lit up the surrounding peaks as we set out from Bow Hut. The icefield was firm and fast.",
+    "file": "/assets/wapta/photos/photo-03.jpg"
+  },
+  {
+    "id": "photo-04",
+    "day": 2,
+    "exif_lat": 51.7052,
+    "exif_lng": -116.5160,
+    "display_lat": 51.7065,
+    "display_lng": -116.5130,
+    "title": "St. Nicholas Peak",
+    "caption": "The striking limestone tower of St. Nicholas Peak rising above the icefield. We roped up here to navigate around a zone of crevasses.",
+    "file": "/assets/wapta/photos/photo-04.jpg"
+  },
+  {
+    "id": "photo-05",
+    "day": 2,
+    "exif_lat": 51.7178,
+    "exif_lng": -116.5756,
+    "title": "Peyto Hut camp",
+    "caption": "Settled into Peyto Hut after a long day on the icefield. The hut sits on a rocky ridge with sweeping views in every direction.",
+    "file": "/assets/wapta/photos/photo-05.jpg"
+  },
+  {
+    "id": "photo-06",
+    "day": 3,
+    "exif_lat": 51.7300,
+    "exif_lng": -116.6148,
+    "title": "Traversing the Wapta Icefield",
+    "caption": "Skin tracks stretching across the wide expanse of the icefield. The scale of the glacier is hard to convey — we skied for hours without seeing another feature.",
+    "file": "/assets/wapta/photos/photo-06.jpg"
+  },
+  {
+    "id": "photo-07",
+    "day": 3,
+    "exif_lat": 51.7447,
+    "exif_lng": -116.7112,
+    "display_lat": 51.7450,
+    "display_lng": -116.7080,
+    "title": "Balfour High Col",
+    "caption": "Skinning up to the Balfour High Col with the Balfour Glacier below. The col sits right on the Banff–Yoho boundary.",
+    "file": "/assets/wapta/photos/photo-07.jpg"
+  },
+  {
+    "id": "photo-08",
+    "day": 4,
+    "exif_lat": 51.7540,
+    "exif_lng": -116.7462,
+    "title": "Crevasse navigation",
+    "caption": "Threading through a zone of open crevasses on the upper icefall. Ropes on, slow and careful.",
+    "file": "/assets/wapta/photos/photo-08.jpg"
+  },
+  {
+    "id": "photo-09",
+    "day": 4,
+    "exif_lat": 51.7670,
+    "exif_lng": -116.7582,
+    "display_lat": 51.7685,
+    "display_lng": -116.7550,
+    "title": "Summit views",
+    "caption": "Panoramic views from a sub-peak above the route. Mt. Balfour visible to the southeast, with the Columbia Icefield in the distance.",
+    "file": "/assets/wapta/photos/photo-09.jpg"
+  },
+  {
+    "id": "photo-10",
+    "day": 4,
+    "exif_lat": 51.7845,
+    "exif_lng": -116.7836,
+    "title": "Scott Duncan Hut",
+    "caption": "The tiny orange Scott Duncan Hut perched above the icefall. It sleeps eight and felt palatial after four days on the glacier.",
+    "file": "/assets/wapta/photos/photo-10.jpg"
+  },
+  {
+    "id": "photo-11",
+    "day": 5,
+    "exif_lat": 51.7622,
+    "exif_lng": -116.7612,
+    "display_lat": 51.7640,
+    "display_lng": -116.7580,
+    "title": "Looking back up the descent",
+    "caption": "One last look back up the icefall before dropping into the Yoho Valley. Five days of ski mountaineering behind us.",
+    "file": "/assets/wapta/photos/photo-11.jpg"
+  },
+  {
+    "id": "photo-12",
+    "day": 5,
+    "exif_lat": 51.7025,
+    "exif_lng": -116.7040,
+    "title": "Reaching the valley",
+    "caption": "Skis off and boots on for the final walk out. The mountains that had felt so close for five days suddenly towered above us from the valley floor.",
+    "file": "/assets/wapta/photos/photo-12.jpg"
+  }
+]
