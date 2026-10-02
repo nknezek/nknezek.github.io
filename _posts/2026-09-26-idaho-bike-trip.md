@@ -152,11 +152,16 @@ Our route over three days. Click a dot to see the photo taken there.
 })();
 </script>
 
-<!-- TODO: add per-day distance / elevation stats from Strava -->
-
 - **[Day 1](https://www.strava.com/activities/20345092237):** McCall → Lick Creek Summit → Yellow Pine → Profile Gap (7,605 ft) → Big Creek Lodge
-- **[Day 2](https://www.strava.com/activities/20369655872):** Big Creek → Elk Summit (8,670 ft) → South Fork Salmon River → Warren Summit → Warren → Burgdorf Hot Springs (58 mi, ~9,000 ft of climbing)
+- **[Day 2](https://www.strava.com/activities/20369655872):** Big Creek → Elk Summit (8,670 ft) → South Fork Salmon River → Warren Summit → Warren → Burgdorf Hot Springs
 - **[Day 3](https://www.strava.com/activities/20372115553):** Burgdorf → Loon Lake (almost) → Lick Creek & Secesh River trails → Yeti Backcountry Pizza → Burgdorf → Secesh Summit → McCall
+
+| | Distance | Climbing | Descent | Moving time |
+|---|---:|---:|---:|---:|
+| [Day 1](https://www.strava.com/activities/20345092237) | 74.3 mi | 6,486 ft | 5,770 ft | 7:47:54 |
+| [Day 2](https://www.strava.com/activities/20369655872) | 58.4 mi | 9,121 ft | 8,710 ft | 8:30:51 |
+| [Day 3](https://www.strava.com/activities/20372115553) | 59.7 mi | 3,048 ft | 4,130 ft | 5:55:26 |
+| **Total** | **192.3 mi** | **18,655 ft** | **18,610 ft** | **22:14:11** |
 
 ## Day 0: Getting There
 
