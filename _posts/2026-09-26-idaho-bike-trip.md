@@ -5,7 +5,7 @@ date:    2026-09-26 00:00:00 -0700
 categories: outdoors
 ---
 
-In late September, a group of six of us (Dan, Jordan, Boris, Hazel, Rylan, and I) flew to Boise for a three-day gravel bikepacking loop through the mountains of central Idaho. Starting and ending in McCall, we rode remote dirt roads and singletrack through Yellow Pine, Big Creek, Warren, and Burgdorf Hot Springs, crossing several summits over 7,500 ft and staying in backcountry lodges every night. It was cold, steep, rocky, occasionally miserable, and one of the best trips I've ever done.
+In late September, a group of six of us (Dan, Jordan, Boris, Hazel, Rylan, and I) flew to Boise for a three-day gravel bikepacking loop through the mountains of central Idaho. Starting and ending in McCall, we rode remote dirt roads and singletrack through Yellow Pine, Big Creek, Warren, and Burgdorf Hot Springs, crossing summits over 8,600 ft and staying in backcountry lodges every night. It was beautiful, cold, steep, rocky, occasionally miserable, and the most intense physical activity I've ever done.
 
 ![Group photo at the end in McCall]({{site.baseurl}}/assets/img/idaho/web/mccall-finish.jpg)
 <span style="display: flex;justify-content: center;font-style:italic;">
