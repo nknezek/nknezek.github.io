@@ -2,3 +2,6 @@ _site
 .sass-cache
 .jekyll-metadata
 unused images
+
+# Idaho trip: keep original camera files out of the repo, only commit web versions
+assets/img/idaho/*.*
